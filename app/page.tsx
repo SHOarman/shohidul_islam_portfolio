@@ -111,7 +111,7 @@ export default function Portfolio() {
         "Built real-time dashboards for tracking goals, tasks, and habits with GetX",
       ],
       tech: ["Flutter", "GetX", "REST API", "Firebase", "RevenueCat", "Push Notification"],
-      image: "/placeholder.svg",
+      image: "/Screenshot 2026-06-20 205931.png",
       liveDemo: "#",
       github: "https://github.com/SHOarman/Rosan",
     },
@@ -127,7 +127,7 @@ export default function Portfolio() {
         "Client visibility & dynamic control with automated refresh cycles",
       ],
       tech: ["Flutter", "GetX", "REST API"],
-      image: "/placeholder.svg",
+      image: "/image (9).png",
       liveDemo: "#",
       github: "https://github.com/SHOarman/zeustucker",
     },
@@ -142,7 +142,7 @@ export default function Portfolio() {
         "Real-time instant communication using Web Sockets",
       ],
       tech: ["Flutter", "GetX", "WebSocket", "REST API"],
-      image: "/placeholder.svg",
+      image: "/image (8).png",
       liveDemo: "#",
       github: "https://github.com/SHOarman/NextClass",
     },
@@ -158,7 +158,7 @@ export default function Portfolio() {
         "Subscription-based model for commercial fleets",
       ],
       tech: ["Flutter", "GetX", "Node.js", "MVC"],
-      image: "/motorbridge-fleet.png",
+      image: "/Screenshot 2026-05-21 014138.png",
       liveDemo: "#",
       github: "https://github.com/SHOarman/motorbridge",
     },
@@ -174,7 +174,7 @@ export default function Portfolio() {
         "Real-time data synchronization using Firebase",
       ],
       tech: ["Flutter", "GetX", "Firebase", "MVC"],
-      image: "/artisan.png",
+      image: "/Screenshot 2026-05-19 184144.png",
       liveDemo: "#",
       github: "https://github.com/SHOarman/astisan",
     },
@@ -280,7 +280,7 @@ export default function Portfolio() {
           >
             <div className="mb-6 overflow-hidden">
               <h1 className="text-5xl md:text-7xl font-bold text-balance animate-slide-in-left">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="text-accent relative inline-block">
                   <span className="animate-gradient-text bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-300% animate-gradient">
                     Shohidul Islam
@@ -570,86 +570,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="scroll-animate">
-            <h2 className="text-4xl font-bold text-center mb-16">
-              What Clients Say
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="scroll-animate bg-card p-8 rounded-xl shadow-lg">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-accent font-bold">JD</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-card-foreground">
-                    John Doe
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    CTO, TechStartup
-                  </p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                "Shohidul delivered an exceptional Django API that scaled perfectly
-                with our growing user base. His attention to performance
-                optimization saved us thousands in server costs."
-              </p>
-              <div className="flex text-accent mt-4">{"★".repeat(5)}</div>
-            </div>
-            <div
-              className="scroll-animate bg-card p-8 rounded-xl shadow-lg"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-accent font-bold">SM</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-card-foreground">
-                    Sarah Miller
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Product Manager, E-commerce Co
-                  </p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                "Working with Shohidul was a game-changer. He built our entire
-                backend infrastructure from scratch and delivered ahead of
-                schedule. Highly recommended!"
-              </p>
-              <div className="flex text-accent mt-4">{"★".repeat(5)}</div>
-            </div>
-            <div
-              className="scroll-animate bg-card p-8 rounded-xl shadow-lg"
-              style={{ animationDelay: "0.4s" }}
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-accent font-bold">MJ</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-card-foreground">
-                    Mike Johnson
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Founder, Analytics Platform
-                  </p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-pretty">
-                "Shohidul's expertise in database optimization helped us process
-                millions of records efficiently. His code is clean,
-                well-documented, and maintainable."
-              </p>
-              <div className="flex text-accent mt-4">{"★".repeat(5)}</div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Contact Section */}
       <section className="py-20 px-4 bg-muted/30">
@@ -659,7 +580,7 @@ export default function Portfolio() {
               Get In Touch
             </h2>
             <p className="text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto text-pretty">
-              Ready to start your next project? Let's discuss how I can help you
+              Ready to start your next project? Let&apos;s discuss how I can help you
               build something amazing.
             </p>
           </div>
@@ -667,12 +588,12 @@ export default function Portfolio() {
             <div className="scroll-animate">
               <div className="bg-card p-8 rounded-xl shadow-lg">
                 <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
-                  Let's Connect
+                  Let&apos;s Connect
                 </h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed text-pretty">
-                  I'm always interested in new opportunities and exciting
+                  I&apos;m always interested in new opportunities and exciting
                   projects. Whether you need a robust API, database
-                  optimization, or a complete backend solution, let's discuss
+                  optimization, or a complete backend solution, let&apos;s discuss
                   how I can help bring your ideas to life.
                 </p>
                 <div className="space-y-4">
@@ -781,7 +702,7 @@ export default function Portfolio() {
                         Message sent successfully! 🎉
                       </p>
                       <p className="text-sm">
-                        I'll get back to you within 24 hours.
+                        I&apos;ll get back to you within 24 hours.
                       </p>
                     </div>
                   )}
