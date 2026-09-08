@@ -100,6 +100,22 @@ export default function Portfolio() {
 
   const projects = [
     {
+      title: "Meetvide (Event Management & Social Platform)",
+      role: "Mobile App Developer",
+      description:
+        "Developed a platform for hosting and joining free/premium events with features for location, venue, capacity, and date scheduling.",
+      features: [
+        "Implemented secure event-based subscriptions and ticketing using Stripe, with automated payment processing for hosts",
+        "Integrated real-time group messaging and direct invitation systems for enhanced user engagement",
+        "Utilized GetX for efficient navigation and real-time data synchronization",
+        "Implemented robust account verification flows to ensure platform reliability",
+      ],
+      tech: ["Flutter", "GetX", "Stripe"],
+      image: "/meetvide.png",
+      liveDemo: "#",
+      github: "#",
+    },
+    {
       title: "GoRise – AI Productivity & Mindfulness Coach",
       role: "Mobile App Developer",
       description:
