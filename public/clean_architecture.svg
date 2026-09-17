@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<circle cx="128" cy="128" r="106" fill="#1976D2"/>
+<circle cx="128" cy="128" r="78" fill="#26A9E0"/>
+<circle cx="128" cy="128" r="50" fill="#18A879"/>
+<circle cx="128" cy="128" r="25" fill="#F9A825"/>
+<path d="M128 112l17 10v20l-17 10-17-10v-20z" fill="white"/>
+<path d="M128 112v20m17-10l-17 10m-17-10l17 10" stroke="#1976D2" stroke-width="3"/>
+<text x="128" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="white">PRESENTATION</text>
+<text x="128" y="78" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="white">DOMAIN</text>
+<text x="128" y="105" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="white">DATA</text>
+</svg>

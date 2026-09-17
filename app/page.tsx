@@ -5,6 +5,7 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
+import { Rocket, Gauge, Plug, Network, Palette, MonitorSmartphone } from "lucide-react";
 
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,6 +18,15 @@ export default function Portfolio() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    if (!link || link === "#") {
+      e.preventDefault();
+      setToastMessage("Not added yet");
+      setTimeout(() => setToastMessage(null), 3000);
+    }
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -84,21 +94,39 @@ export default function Portfolio() {
   };
 
   const skills = [
-    { name: "Flutter", icon: "📱" },
-    { name: "Dart", icon: "🎯" },
-    { name: "REST APIs", icon: "🔗" },
-    { name: "Git & GitHub", icon: "📝" },
-    { name: "App Store Deploy", icon: "🍎" },
-    { name: "Play Store Deploy", icon: "▶️" },
-    { name: "Firebase", icon: "🔥" },
-    { name: "GetX & Provider", icon: "⚙️" },
-    { name: "Clean Architecture", icon: "🏗️" },
-    { name: "Push Notifications", icon: "🔔" },
-    { name: "RevenueCat", icon: "💳" },
-    { name: "Payment Integration", icon: "💲" },
+    { name: "Flutter", icon: "/flutter-svgrepo-com.svg", isImage: true },
+    { name: "Dart", icon: "/dart.svg", isImage: true },
+    { name: "REST APIs", icon: "/rest_apis.svg", isImage: true },
+    { name: "Git & GitHub", icon: "/github-svgrepo-com.svg", isImage: true },
+    { name: "App Store Deploy", icon: "/apple-store-svgrepo-com.svg", isImage: true },
+    { name: "Play Store Deploy", icon: "/playstore-svgrepo-com.svg", isImage: true },
+    { name: "Firebase", icon: "/firebase-svgrepo-com.svg", isImage: true },
+    { name: "GetX & Provider", icon: "/getx_provider.svg", isImage: true },
+    { name: "Clean Architecture", icon: "/clean_architecture.svg", isImage: true, width: 44, height: 44 },
+    { name: "Push Notifications", icon: "/push_notifications.svg", isImage: true },
+    { name: "RevenueCat", icon: "/revenuecat.svg", isImage: true },
+    { name: "Payment Integration", icon: "/payment-method-pay-svgrepo-com.svg", isImage: true },
   ];
 
   const projects = [
+    {
+      title: "MotorBridge (Fleet Solution)",
+      role: "Mobile App Developer",
+      description:
+        "Automated fleet tracking system for vehicle MOT, road tax, and insurance with a secure digital vault.",
+      features: [
+        "Real-time vehicle tracking via registration APIs",
+        "Smart notification engine for upcoming service dates",
+        "Document vault for centralized digital record keeping",
+        "Subscription-based model for commercial fleets",
+      ],
+      tech: ["Flutter", "GetX", "Node.js", "MVC"],
+      image: "/motorbridge_v2.png",
+      appStore: "#",
+      playStore: "https://play.google.com/store/apps/details?id=uk.com.motorbridge.app",
+      demo: "#",
+      github: "https://github.com/SHOarman/motorbridge",
+    },
     {
       title: "Meetvide (Event Management & Social Platform)",
       role: "Mobile App Developer",
@@ -112,7 +140,9 @@ export default function Portfolio() {
       ],
       tech: ["Flutter", "GetX", "Stripe"],
       image: "/meetvide_v2.png",
-      liveDemo: "#",
+      appStore: "#",
+      playStore: "#",
+      demo: "#",
       github: "#",
     },
     {
@@ -128,7 +158,9 @@ export default function Portfolio() {
       ],
       tech: ["Flutter", "GetX", "REST API", "Firebase", "RevenueCat", "Push Notification"],
       image: "/gorise_v2.png",
-      liveDemo: "#",
+      appStore: "#",
+      playStore: "#",
+      demo: "#",
       github: "https://github.com/SHOarman/Rosan",
     },
     {
@@ -144,7 +176,9 @@ export default function Portfolio() {
       ],
       tech: ["Flutter", "GetX", "REST API"],
       image: "/zeustucker_v2.png",
-      liveDemo: "#",
+      appStore: "#",
+      playStore: "#",
+      demo: "#",
       github: "https://github.com/SHOarman/zeustucker",
     },
     {
@@ -159,24 +193,10 @@ export default function Portfolio() {
       ],
       tech: ["Flutter", "GetX", "WebSocket", "REST API"],
       image: "/hometutor_v2.png",
-      liveDemo: "#",
+      appStore: "#",
+      playStore: "#",
+      demo: "#",
       github: "https://github.com/SHOarman/NextClass",
-    },
-    {
-      title: "MotorBridge (Fleet Solution)",
-      role: "Mobile App Developer",
-      description:
-        "Automated fleet tracking system for vehicle MOT, road tax, and insurance with a secure digital vault.",
-      features: [
-        "Real-time vehicle tracking via registration APIs",
-        "Smart notification engine for upcoming service dates",
-        "Document vault for centralized digital record keeping",
-        "Subscription-based model for commercial fleets",
-      ],
-      tech: ["Flutter", "GetX", "Node.js", "MVC"],
-      image: "/motorbridge_v2.png",
-      liveDemo: "#",
-      github: "https://github.com/SHOarman/motorbridge",
     },
     {
       title: "Artisan (Service Marketplace)",
@@ -191,10 +211,11 @@ export default function Portfolio() {
       ],
       tech: ["Flutter", "GetX", "Firebase", "MVC"],
       image: "/artisan_v2.png",
-      liveDemo: "#",
+      appStore: "#",
+      playStore: "#",
+      demo: "#",
       github: "https://github.com/SHOarman/astisan",
     },
-
   ];
 
   const experiences = [
@@ -206,6 +227,7 @@ export default function Portfolio() {
         "Developing cross-platform applications using MVC architecture for clean code separation. Collaborating with the MindMatrix AI Development team.",
       achievements: [
         "Developed cross-platform applications using MVC architecture",
+        "Successfully deployed and managed production applications on Play Store",
         "Collaborated with the MindMatrix AI Development team",
       ],
     },
@@ -222,40 +244,46 @@ export default function Portfolio() {
   ];
   const services = [
     {
-      icon: "�",
+      icon: <MonitorSmartphone size={36} />,
       title: "Cross-Platform App Development",
       description:
         "Building high-performance, native-like mobile applications for both Android and iOS from a single Flutter codebase.",
+      colorClass: "bg-[#FAECE7] text-[#712B13] dark:bg-[#993C1D] dark:text-[#F5C4B3]"
     },
     {
-      icon: "🎨",
+      icon: <Palette size={36} />,
       title: "UI/UX Implementation",
       description:
         "Translating beautiful Figma designs into responsive, pixel-perfect, and animated user interfaces using Flutter.",
+      colorClass: "bg-[#FBEAF0] text-[#72243E] dark:bg-[#993556] dark:text-[#F4C0D1]"
     },
     {
-      icon: "🏗️",
+      icon: <Network size={36} />,
       title: "State Management & Architecture",
       description:
         "Implementing Clean Architecture with robust state management solutions like GetX, Provider, or BLoC for scalable apps.",
+      colorClass: "bg-[#E1F5EE] text-[#085041] dark:bg-[#0F6E56] dark:text-[#9FE1CB]"
     },
     {
-      icon: "�",
+      icon: <Plug size={36} />,
       title: "API & Third-Party Integration",
       description:
         "Seamlessly integrating RESTful APIs, Firebase, payment gateways like RevenueCat, and push notifications.",
+      colorClass: "bg-[#EEEDFE] text-[#3C3489] dark:bg-[#3C3489] dark:text-[#CECBF6]"
     },
     {
-      icon: "⚡",
+      icon: <Gauge size={36} />,
       title: "App Performance Optimization",
       description:
         "Optimizing widget rebuilds, tackling memory leaks, and reducing app size to ensure butter-smooth 60fps performance.",
+      colorClass: "bg-[#FAEEDA] text-[#633806] dark:bg-[#854F0B] dark:text-[#FAC775]"
     },
     {
-      icon: "�",
+      icon: <Rocket size={36} />,
       title: "App Store Deployment",
       description:
         "Handling the complete deployment lifecycle for Google Play Store and Apple App Store, ensuring compliance and smooth rollouts.",
+      colorClass: "bg-[#E6F1FB] text-[#0C447C] dark:bg-[#0C447C] dark:text-[#B5D4F4]"
     },
   ];
 
@@ -324,18 +352,29 @@ export default function Portfolio() {
               </p>
             </div>
             <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-700 ${isVisible ? "animate-slide-in-up" : "opacity-0 translate-y-10"
+              className={`flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 transition-all duration-1000 delay-700 ${isVisible ? "animate-slide-in-up" : "opacity-0 translate-y-10"
                 }`}
             >
               <a
-                href="#projects"
-                className="bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-accent/90 animate-pulse-subtle"
+                href="#contact"
+                className="flex items-center justify-center bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:scale-105 hover:shadow-xl transition-all duration-300 hover:bg-accent/90 animate-pulse-subtle"
               >
-                View My Work
+                Get in Touch
               </a>
-              <button className="border border-border px-8 py-3 rounded-lg font-semibold hover:bg-muted hover:scale-105 transition-all duration-300 hover:shadow-lg">
-                Get In Touch
-              </button>
+              <a
+                href="#projects"
+                className="flex items-center justify-center border-2 border-border px-6 py-3 rounded-lg font-semibold hover:bg-muted hover:scale-105 transition-all duration-300 hover:shadow-lg"
+              >
+                View Projects
+              </a>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1fACKG-d0nvHCGM7cXvUw4DgcPttfOnBA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center border-2 border-border px-6 py-3 rounded-lg font-semibold hover:bg-muted hover:scale-105 transition-all duration-300 hover:shadow-lg"
+              >
+                Download CV
+              </a>
             </div>
           </div>
 
@@ -415,7 +454,7 @@ export default function Portfolio() {
                   With 1+ years of professional experience, I specialize in building and optimizing scalable Android & iOS applications using Flutter and Dart. My technical expertise spans GetX, Provider, Clean Architecture, and seamless REST API integrations.
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-pretty">
-                  I manage the complete application lifecycle—from crafting intuitive, high-performance UI/UX and integrating AI features to successful deployments on both Google Play Console and App Store Connect.
+                  I manage the complete application lifecycle—from crafting intuitive, high-performance UI/UX and integrating AI features to successful production-ready deployments. I have independently published and scaled multiple applications (including MotorBridge, Meetvide, and GoRise) on both the Google Play Console and App Store Connect, ensuring strict compliance with all guidelines.
                 </p>
               </div>
             </div>
@@ -428,10 +467,14 @@ export default function Portfolio() {
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div
-                      className="text-3xl mb-2 animate-float"
+                      className="text-3xl mb-2 flex justify-center items-center h-12 animate-float"
                       style={{ animationDelay: `${index * 0.2}s` }}
                     >
-                      {skill.icon}
+                      {skill.isImage ? (
+                        <Image src={skill.icon} alt={skill.name} width={skill.width || 36} height={skill.height || 36} className="object-contain" />
+                      ) : (
+                        skill.icon
+                      )}
                     </div>
                     <p className="text-sm font-medium text-card-foreground">
                       {skill.name}
@@ -510,7 +553,7 @@ export default function Portfolio() {
                 className="scroll-animate bg-card p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl mb-4 group-hover:animate-bounce-subtle transition-all duration-300">
+                <div className={`w-16 h-16 rounded-2xl flex justify-center items-center mb-6 group-hover:animate-bounce-subtle transition-all duration-300 ${service.colorClass}`}>
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-card-foreground">
@@ -565,18 +608,31 @@ export default function Portfolio() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex gap-3">
+                      <a
+                        href={project.appStore}
+                        onClick={(e) => handleLinkClick(e, project.appStore)}
+                        className="flex-1 flex items-center justify-center gap-2 bg-accent text-accent-foreground px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors"
+                      >
+                        <Image src="/apple-store-svgrepo-com.svg" alt="App Store" width={18} height={18} />
+                        App Store
+                      </a>
+                      <a
+                        href={project.playStore}
+                        onClick={(e) => handleLinkClick(e, project.playStore)}
+                        className="flex-1 flex items-center justify-center gap-2 bg-accent text-accent-foreground px-3 py-2 rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors"
+                      >
+                        <Image src="/playstore-svgrepo-com.svg" alt="Play Store" width={18} height={18} />
+                        Play Store
+                      </a>
+                    </div>
                     <a
-                      href={project.liveDemo}
-                      className="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-accent/90 transition-colors"
+                      href={project.demo}
+                      onClick={(e) => handleLinkClick(e, project.demo)}
+                      className="w-full text-center border border-border px-3 py-2 rounded-lg text-sm font-medium hover:bg-muted transition-colors"
                     >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.github}
-                      className="border border-border px-4 py-2 rounded-lg text-sm font-medium hover:bg-muted transition-colors"
-                    >
-                      GitHub
+                      Demo
                     </a>
                   </div>
                 </div>
@@ -589,7 +645,7 @@ export default function Portfolio() {
 
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section id="contact" className="py-20 px-4 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <div className="scroll-animate">
             <h2 className="text-4xl font-bold text-center mb-16">
@@ -758,6 +814,13 @@ export default function Portfolio() {
 
       {/* Footer */}
 
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-8 right-8 bg-accent text-accent-foreground px-6 py-3 rounded-lg shadow-2xl animate-fade-in z-50 flex items-center gap-3">
+          <span className="text-xl">ℹ️</span>
+          <span className="font-medium">{toastMessage}</span>
+        </div>
+      )}
     </div>
   );
 }
