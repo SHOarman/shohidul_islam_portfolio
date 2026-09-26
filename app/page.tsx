@@ -222,23 +222,25 @@ export default function Portfolio() {
     {
       title: "Mobile App Developer",
       company: "Sparktech IT Limited",
-      period: "December 2025 - Present",
+      period: "Dec 2025 – Present",
       description:
-        "Developing cross-platform applications using MVC architecture for clean code separation. Collaborating with the MindMatrix AI Development team.",
+        "Working on production-grade cross-platform mobile applications, applying MVC architecture for clean, maintainable code. Collaborating closely with the MindMatrix AI Development team on feature integration.",
       achievements: [
-        "Developed cross-platform applications using MVC architecture",
-        "Successfully deployed and managed production applications on Play Store",
-        "Collaborated with the MindMatrix AI Development team",
+        "Successfully deployed and managed live applications on Google Play Store",
+        "Implemented clean, scalable MVC architecture across multiple app modules",
+        "Collaborated cross-functionally with the AI development team to integrate features into production apps",
       ],
     },
     {
       title: "Industrial Attachment",
       company: "BDCalling IT",
-      period: "September 2025 - December 2025",
+      period: "Sept 2025 – Dec 2025",
       description:
-        "Completed 3 months of intensive training on industry-standard Flutter development workflows.",
+        "Completed 3 months of intensive training on industry-standard Flutter development workflows, building a strong foundation in Flutter fundamentals and mobile app architecture.",
       achievements: [
-        "Completed intensive training on industry-standard Flutter development workflows",
+        "Built a Task Management App as a hands-on training project, applying core Flutter concepts (widgets, state management, navigation)",
+        "Gained in-depth understanding of Flutter fundamentals — widget lifecycle, layouts, and Dart programming concepts",
+        "Practiced structuring clean, maintainable code under industry-standard development workflows",
       ],
     },
   ];
@@ -261,7 +263,7 @@ export default function Portfolio() {
       icon: <Network size={36} />,
       title: "State Management & Architecture",
       description:
-        "Implementing Clean Architecture with robust state management solutions like GetX, Provider, or BLoC for scalable apps.",
+        "Implementing Clean Architecture with robust state management solutions like GetX or Provider for scalable apps.",
       colorClass: "bg-[#E1F5EE] text-[#085041] dark:bg-[#0F6E56] dark:text-[#9FE1CB]"
     },
     {
@@ -368,9 +370,10 @@ export default function Portfolio() {
                 View Projects
               </a>
               <a
-                href="https://drive.google.com/uc?export=download&id=1fACKG-d0nvHCGM7cXvUw4DgcPttfOnBA"
+                href="/Shohidul_Islam_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                download="Shohidul_Islam_Resume.pdf"
                 className="flex items-center justify-center border-2 border-border px-6 py-3 rounded-lg font-semibold hover:bg-muted hover:scale-105 transition-all duration-300 hover:shadow-lg"
               >
                 Download CV
@@ -399,7 +402,7 @@ export default function Portfolio() {
                   {/* Overlay with floating code snippets */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent">
                     <div className="absolute top-4 right-4 bg-accent/90 text-accent-foreground px-3 py-1 rounded-full text-sm font-medium animate-bounce-subtle">
-                      Flutter Expert
+                      Flutter Developer
                     </div>
                     <div
                       className="absolute bottom-4 left-4 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium animate-float"
@@ -670,8 +673,8 @@ export default function Portfolio() {
                 </p>
                 <div className="space-y-4">
                   <a href="mailto:shohidulislamarifbillah@gmail.com" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-200">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <span className="text-accent text-xl">📧</span>
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors p-2.5">
+                      <Image src="/email-part-2-svgrepo-com.svg" alt="Email" width={24} height={24} className="w-6 h-6 object-contain" />
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">Email</p>
@@ -681,8 +684,8 @@ export default function Portfolio() {
                     </div>
                   </a>
                   <a href="https://www.linkedin.com/in/shohidulislam-arifbillah-3b0642355/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-200">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <span className="text-accent text-xl">💼</span>
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors p-2.5">
+                      <Image src="/linkedin-svgrepo-com.svg" alt="LinkedIn" width={24} height={24} className="w-6 h-6 object-contain" />
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">
@@ -694,8 +697,8 @@ export default function Portfolio() {
                     </div>
                   </a>
                   <a href="https://github.com/SHOarman" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-200">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <span className="text-accent text-xl">🐙</span>
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors p-2.5">
+                      <Image src="/github-svgrepo-com.svg" alt="GitHub" width={24} height={24} className="w-6 h-6 object-contain" />
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">GitHub</p>
